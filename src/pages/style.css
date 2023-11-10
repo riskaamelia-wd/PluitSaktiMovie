@@ -1,0 +1,8 @@
+.bg-select{
+    background-color: #090617;
+}
+select{
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appeareance:none;
+}
