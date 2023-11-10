@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './App.css'
@@ -17,24 +17,60 @@ import Mendatang from './pages/Mendatang'
 import Genre from './pages/Genre'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import CariFilm from './pages/CariFilm'
+import { baseUrl, header } from './utils/FetchApi'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([])  
+  const [search, setSearch] = useState('')
+      useEffect(() => {
+          const fetchData = async () => {
+          try {              
+                  const response = await axios.get(`${baseUrl}/search/movie?query=${search}&include_adult=false&language=en-US&page=1`, {
+                      headers: {
+                          'Authorization': `${header}`
+                      }
+                  });
+                  setData(response.data.results)  
+                  console.log(data);              
+          } catch (error) {
+              console.log(error);
+          }
+      };
+     fetchData();
+ }, [search]);
   return (
     <div>
-    <div style={{backgroundColor:'#090617'}}>
+    <div style={{backgroundColor:'#090617'}} className='min-vh-100'>
       <BrowserRouter>
-      <div className='container'>
-        <Navbar/>
+      {/* <div className='container'> */}
+        <Navbar
+          value={search.toLowerCase()}
+          onChange={(e) => {
+            setSearch(e.target.value.trim());
+            }}
+        />
         <Routes>
           <Route path='/' element={<Beranda/>}/>
-          <Route path='detailFilm' element={<DetailFilm/>}/>
+          <Route path='detailFilm/:id' element={<DetailFilm/>}/>
           <Route path='sedangTayang' element={<SedangTayang/>}/>
           <Route path='terpopuler' element={<Terpopuler/>}/>
           <Route path='mendatang' element={<Mendatang/>}/>        
           <Route path='genre/:tag' element={<Genre/>}/>
+          <Route 
+            path='cariFilm' 
+            element={
+            <CariFilm 
+              data={data}
+              value={search.toLowerCase()}
+              onChange={(e) => {
+                setSearch(e.target.value.trim());
+                }}
+            />
+          }
+          />
         </Routes>
-      </div>
+      {/* </div> */}
       </BrowserRouter>
       
     </div>

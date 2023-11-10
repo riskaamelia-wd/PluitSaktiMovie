@@ -9,7 +9,7 @@ import Carousel from "../components/Carousel"
 import Tag from '../elements/Tag'
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { baseUrl, header } from "../utils/FetchApi"
+import { baseImgUrl, baseUrl, header } from "../utils/FetchApi"
 import { useNavigate } from "react-router-dom"
 
 const Beranda = () =>{
@@ -18,12 +18,35 @@ const Beranda = () =>{
         const fetchData = async () => {
             try {
                
-                    const response = await axios.get(`${baseUrl}//genre/movie/list?language=en`, {
+                    const response = await axios.get(`${baseUrl}/genre/movie/list?language=en`, {
                         headers: {
                             'Authorization': `${header}`
                         }
                     });
                     setData(response.data.genres)
+                
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    
+    
+    const [title, setTitle] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+            872585
+            try {
+               
+                    const response = await axios.get(`${baseUrl}/movie/609681?language=en-US`, {
+                        headers: {
+                            'Authorization': `${header}`
+                        }
+                    });
+                    setTitle(response.data)
                     console.log(response.data);
                 
             } catch (error) {
@@ -39,16 +62,14 @@ const Beranda = () =>{
         <>
          <div>
             <Jumbotron
-                // bgImg={bg}
-                h1={'Indiana Jones and The Dial Of Destiny'}
-                list1={'ADVENTURE'}
-                list2={'ACTION'}
-                list3={'HISTORY'}
+                bgImg={`${baseImgUrl}/${title?.backdrop_path}`}
+                h1={title?.title}
+                list={title?.genres}
                 tag={'16+'}
                 time={'2j 30m'}
-                year={'2023'}
+                year={title?.release_date ? title.release_date.substring(0, 4) : ""}
                 rate={'9.0'}
-                desc={'Menemukan dirinya berada di era baru, dan mendekati masa pensiun, Indy bergulat dengan dunia yang tampaknya sudah melampaui batasnya. Namun saat tentakel kejahatan yang sangat familiar kembali dalam wujud rival lamanya, Indy harus mengenakan topinya dan mengambil cambuknya sekali lagi untuk memastikan artefak kuno dan kuat tidak jatuh ke tangan yang salah.'}
+                desc={title?.overview}
                 actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}
             />
             <Category
@@ -69,12 +90,13 @@ const Beranda = () =>{
                 navLink={'/mendatang'}
                 id={6}
             />
-            <div className="col-10 pt-3 pb-5">
+            <div className="col-10 pt-3 pb-5 container">
                 <h3>Genre Tersedia</h3>
                 {
                     data?.length > 0 ? (
                         data?.map((item)=>(
                             <Tag
+                                key={item.id}
                                 tag={item.name}
                                 className={'m-1'}
                                 onClick={()=>navigate(

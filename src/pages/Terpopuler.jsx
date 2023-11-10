@@ -7,7 +7,7 @@ const Terpopuler = ({}) => {
         <div>
             <ListMovie
                 text={'Terpopuler'}
-                res={'/movie/popular?language=en-US&page=1'}
+                res={'/trending/movie/day'}
             />
         </div>
     )

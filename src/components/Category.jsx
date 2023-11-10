@@ -26,7 +26,7 @@ const Category = ({text, img,id,   navLink}) => {
             fetchData();
         }, []);
     return (        
-      <div className="pt-3 pb-3">
+      <div className="pt-3 pb-3 container">
         <div className="d-flex flex-row justify-content-between  mb-3">
             <h3>{text}</h3>
             <Button
@@ -40,8 +40,10 @@ const Category = ({text, img,id,   navLink}) => {
                 data?.length > 0 ?(
                     data?.map((item,idx) => (
                         idx < id &&
-                            <div className="col-md-4 p-1 col-3 col-lg-2">
+                            <div className="col-md-4 p-2 col-3 col-lg-2">
                                 <Card
+                                key={item.id}
+                                idFilm={item.id}
                                 time={'1h 53m'}
                                 year={item.release_date}
                                 img={`${baseImgUrl}/${item.poster_path}`}

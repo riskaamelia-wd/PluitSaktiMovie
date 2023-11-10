@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = ({img, value, onChange}) => {
     return(
-        <div className="d-flex flex-row justify-content-between p-3 mb-5">
+        <div className="d-flex flex-row justify-content-between container p-3 mb-5">
             <div  className="d-flex flex-row col-5 col-lg-8">
                 <NavLink to={'/'}>
                     <img
@@ -19,10 +19,12 @@ const Navbar = ({img, value, onChange}) => {
                 </div>
             </div>
             <div className="col-3">
-                <Search
-                    value={value}
-                    onChange={onChange}
-                />
+                <NavLink to={'cariFilm'}>
+                    <Search
+                        value={value}
+                        onChange={onChange}
+                    />
+                </NavLink>
             </div>
         </div>
     )

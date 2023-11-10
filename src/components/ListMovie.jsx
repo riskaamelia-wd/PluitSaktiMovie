@@ -16,10 +16,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
                             'Authorization': `${header}`
                         }
                     });
-                    setData(response.data.results
-                        )
-                    console.log(response.data);
-                
+                    setData(response.data.results)                
             } catch (error) {
                 console.log(error);
             }
@@ -28,7 +25,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
    }, []);
 
     return(
-        <div className="pb-4">            
+        <div className="pb-4 container">            
         {text && <h3>{text}</h3>}
         {
             label &&
@@ -48,6 +45,8 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
                         data?.map(item => (
                             <div className="col-md-4 pe-1 col-3 col-lg-2">
                                 <Card
+                                key={item.id}
+                                idFilm={item.id}
                                 time={'1h 53m'}
                                 year={item.release_date}
                                 img={`${baseImgUrl}/${item.poster_path}`}

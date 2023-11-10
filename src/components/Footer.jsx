@@ -1,26 +1,27 @@
 import appStore from '../assets/App Store - Filled.svg'
 import googlePlay from '../assets/Google Play.svg'
 import logo from '../assets/logo-white.svg'
+import './style.css'
 
 const Footer = ({}) => {
     return(
-        <div style={{backgroundColor:'#0F172A'}}>
+        <div style={{backgroundColor:'#0F172A'}} >
             <div className='pb-4 pt-3 container'>
                 <div className='row'>
-                    <div className='col-3 d-flex flex-column'>
+                    <div className='col-3 d-flex flex-column gap-3'>
                         <a href="#">FAQ</a>
                         <a href="#">Relasi Investor</a>
                         <a href="#">Cara Menonton</a>
                         <a href="#">Informasi Perusahaan</a>
                         <a href="#">Hanya di Pluit Sakti</a>
                     </div>
-                    <div className='col-3 d-flex flex-column'>
+                    <div className='col-3 d-flex flex-column gap-3'>
                         <a href="#">Pusat Bantuan</a>
                         <a href="#">Pekerjaan</a>
                         <a href="#">Aturan Penggunaan</a>
                         <a href="#">Kontak Kami</a>
                     </div>
-                    <div className='col-3 d-flex flex-column'>
+                    <div className='col-3 d-flex flex-column gap-3'>
                         <a href="#">Akun</a>
                         <a href="#">Privasi</a>
                         <a href="#">Tes Kecepatan</a>

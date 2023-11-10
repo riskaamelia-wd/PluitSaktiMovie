@@ -3,7 +3,7 @@ import Card2 from "../elements/Card2"
 
 const Carousel = () => {
     return(
-        <div className="mt-5 mb-4">
+        <div className="mt-5 mb-4 container">
             <div className="d-flex justify-content-between ">
                 <h3 className="fw-bold mb-4">Dibintangi Oleh</h3>
                 <div className="">

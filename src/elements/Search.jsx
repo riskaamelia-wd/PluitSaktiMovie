@@ -1,6 +1,6 @@
 const Search = ({value,onChange}) => {
     return(
-        <div>
+        <>
             <div className="d-flex flex-row">
                 <i className="bi bi-search m-2"></i>
                 <input
@@ -14,7 +14,7 @@ const Search = ({value,onChange}) => {
                 />
             </div>
             <hr className="border border-white m-0"/>
-        </div>
+        </>
     )
 }
 export default Search
