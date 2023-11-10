@@ -7,7 +7,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
   return (
     <div className='pb-3' style={{ position: 'relative' }}>
       {/* Background overlay */}
-      {
+      {/* {
         bgImg && 
         <div
             style={{
@@ -21,7 +21,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
             opacity: '0.3',
             }}
         ></div>
-      }
+      } */}
         
       <div>
         <div className={className ? `${className}` : `container m-auto p-4`}>

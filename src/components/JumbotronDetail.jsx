@@ -17,9 +17,9 @@ const JumbotronDetail = ({list, h1, tag, year, time, rate, desc, actor, img, bg,
         ></div>
       
         <div className="container align-items-center d-flex flex-row">
-          <div className="col-sm-4 col-lg-3">
+          {img && <div className="col-sm-4 col-lg-3">
             <img src={img} width={'100%'} alt="" />
-          </div>
+          </div>}
           <Jumbotron
                     list={list}
                     // bgImg={bg}

@@ -11,9 +11,30 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { baseImgUrl, baseUrl, header } from "../utils/FetchApi"
 import { useNavigate } from "react-router-dom"
+import JumbotronDetail from "../components/JumbotronDetail"
 
 const Beranda = () =>{
-     const [data, setData] = useState([])
+    const [movie, setMovie] = useState([])    
+    const [data, setData] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+               
+                    const response = await axios.get(`${baseUrl}/movie/609681/videos?language=en-US`, {
+                        headers: {
+                            'Authorization': `${header}`
+                        }
+                    });
+                    setMovie(response.data.results[1])
+                    console.log(response.data.results);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+    }, []);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -61,8 +82,8 @@ const Beranda = () =>{
     return(
         <>
          <div>
-            <Jumbotron
-                bgImg={`${baseImgUrl}/${title?.backdrop_path}`}
+            <JumbotronDetail
+                bg={`${baseImgUrl}/${title?.backdrop_path}`}
                 h1={title?.title}
                 list={title?.genres}
                 tag={'16+'}
@@ -70,7 +91,8 @@ const Beranda = () =>{
                 year={title?.release_date ? title.release_date.substring(0, 4) : ""}
                 rate={'9.0'}
                 desc={title?.overview}
-                actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}
+                actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}                
+                navLink={`https://www.youtube.com/watch?v=${movie?.key}`}
             />
             <Category
                 img={img}
