@@ -5,24 +5,29 @@ import Button from "../elements/Button";
 import Card from "../elements/Card";
 import { Select } from "../elements/Select";
 
-const ListMovie = ({res, text, label, className, classNameLabel, name, value, options, onSelect}) => {
+const ListMovie = ({res, text, label, className, classNameLabel, name, value, options, onSelect, number}) => {
     const [data, setData] = useState([])
+    // const [number, setNumber] = useState(1)
         useEffect(() => {
             const fetchData = async () => {
-            try {
-                
-                    const response = await axios.get(`${baseUrl}/${res}`, {
-                        headers: {
-                            'Authorization': `${header}`
-                        }
-                    });
-                    setData(response.data.results)                
+            try {                
+                const response = await axios.get(`${baseUrl}/${res}`, {
+                    headers: {
+                        'Authorization': `${header}`
+                    }
+                });
+                setData(response.data.results)                
             } catch (error) {
                 console.log(error);
             }
         };
        fetchData();
    }, []);
+
+   const handleClick = () => {
+    // const numberInc = number + 1
+    // setNumber(numberInc)
+   }
 
     return(
         <div className="pb-4 container">            
@@ -60,6 +65,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
             </div>
             <Button
                 text={'Lebih Banyak'}
+                onClick={handleClick}
                 iconRight={'bi bi-arrow-repeat ms-2'}
             />
         </div>

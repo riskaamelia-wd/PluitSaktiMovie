@@ -12,7 +12,7 @@ const SedangTayang = () => {
     return(
         <div>
             <ListMovie
-                res={'/movie/now_playing'}
+                res={'/movie/now_playing?language=en-US&page=1'}
                 text={'Sedang Tayang'}
             />
         </div>

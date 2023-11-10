@@ -1,6 +1,6 @@
 import Jumbotron from "./Jumbotron"
 
-const JumbotronDetail = ({list, h1, tag, year, time, rate, desc, actor, img, bg}) => {
+const JumbotronDetail = ({list, h1, tag, year, time, rate, desc, actor, img, bg, navLink}) => {
     return(
         <div className="pb-4 pt-4" style={{ position: 'relative' }}>
         <div
@@ -31,6 +31,7 @@ const JumbotronDetail = ({list, h1, tag, year, time, rate, desc, actor, img, bg}
                     desc={desc}
                     actor={actor}
                     className={'col-9 ms-5 col-sm-12'}
+                    navLink={navLink}
                 />
         </div>
       </div>

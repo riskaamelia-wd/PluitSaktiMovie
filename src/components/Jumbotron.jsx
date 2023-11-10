@@ -3,7 +3,7 @@ import Button from '../elements/Button'
 import DurationAndYear from '../elements/DurationandYear'
 import Tag from '../elements/Tag'
 
-const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bgImg }) => {
+const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bgImg, navLink}) => {
   return (
     <div className='pb-3' style={{ position: 'relative' }}>
       {/* Background overlay */}
@@ -22,7 +22,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
             }}
         ></div>
       }
-
+        
       <div>
         <div className={className ? `${className}` : `container m-auto p-4`}>
           <div>
@@ -44,7 +44,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
             <p>Dibintangi : </p>
             <p className='fw-bold ms-1'>{actor}</p>
           </div>
-          <Button iconLeft={'bi bi-eye me-2'} text={'Lihat Film'} />
+          <Button iconLeft={'bi bi-eye me-2'} text={'Lihat Film'} navLink={navLink}/>
         </div>
       </div>
     </div>

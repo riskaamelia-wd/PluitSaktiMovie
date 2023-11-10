@@ -97,6 +97,8 @@ const Genre = ({}) => {
                         data?.map(item => (
                             <div className="col-md-4 pe-1 col-3 col-lg-2">
                                 <Card
+                                key={item.id}
+                                idFilm={item.id}
                                 time={'1h 53m'}
                                 year={item.release_date}
                                 img={`${baseImgUrl}/${item.poster_path}`}

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { baseImgUrl, baseUrl, header } from "../utils/FetchApi"
 import Button from "../elements/Button"
+import Jumbotron from "../components/Jumbotron"
 
 const DetailFilm = () => {
     const location = useLocation()
@@ -56,6 +57,7 @@ const DetailFilm = () => {
     return(
         <div>
             <JumbotronDetail
+                classJumbotron={'container'}
                 img={`${baseImgUrl}/${data?.poster_path}`}
                 h1={data?.title}
                 list={data?.genres}
@@ -66,6 +68,7 @@ const DetailFilm = () => {
                 year={data?.release_date ? data.release_date.substring(0, 4) : ""}
                 rate={data?.vote_average}
                 desc={data?.overview}
+                navLink={`https://www.youtube.com/watch?v=${movie?.key}`}
                 // actor={}
             /> 
             <div className="container mt-4 mb-4">

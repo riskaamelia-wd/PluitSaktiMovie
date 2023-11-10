@@ -7,27 +7,27 @@ const Footer = ({}) => {
         <div style={{backgroundColor:'#0F172A'}} >
             <div className='pb-4 pt-3 container'>
                 <div className='row'>
-                    <div className='col-3 d-flex flex-column gap-3'>
+                    <div className='col-6 mb-5 col-md-3 d-flex flex-column gap-3'>
                         <a href="#">FAQ</a>
                         <a href="#">Relasi Investor</a>
                         <a href="#">Cara Menonton</a>
                         <a href="#">Informasi Perusahaan</a>
                         <a href="#">Hanya di Pluit Sakti</a>
                     </div>
-                    <div className='col-3 d-flex flex-column gap-3'>
+                    <div className='col-6 col-md-3 d-flex flex-column gap-3'>
                         <a href="#">Pusat Bantuan</a>
                         <a href="#">Pekerjaan</a>
                         <a href="#">Aturan Penggunaan</a>
                         <a href="#">Kontak Kami</a>
                     </div>
-                    <div className='col-3 d-flex flex-column gap-3'>
+                    <div className='col-6 mb-5 col-md-3  d-flex flex-column gap-3'>
                         <a href="#">Akun</a>
                         <a href="#">Privasi</a>
                         <a href="#">Tes Kecepatan</a>
                         <a href="#">Pusat Media</a>
                         <a href="#">Pengaturan Kuki</a>
                     </div>
-                    <div className='col-3'>
+                    <div className='col-6 col-md-3'>
                         <p className="fw-bold">Dapatkan Aplikasi</p>
                         <div className=' d-flex flex-column align-items-start'>
                             <button className='btn p-0'>
