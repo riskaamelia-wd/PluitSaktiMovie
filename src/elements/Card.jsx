@@ -1,4 +1,4 @@
-import DurationAndYear from "./DurationandYear"
+import YearDuration from "./YearDuration"
 import { NavLink } from "react-router-dom"
 
 const Card = ({img, year, time, title, idFilm}) => {
@@ -8,7 +8,7 @@ const Card = ({img, year, time, title, idFilm}) => {
                 <img src={img} width={'100%'} alt="" />
             </div>
             <p className="fw-bold mt-3 mb-1">{title}</p>
-            <DurationAndYear
+            <YearDuration
                 year={year}
                 time={time}
             />

@@ -1,6 +1,6 @@
 // import bg from '../assets/bg.svg'
 import Button from '../elements/Button'
-import DurationAndYear from '../elements/DurationandYear';
+import YearDuration from '../elements/YearDuration';
 import Tag from '../elements/Tag'
 
 const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bgImg, navLink}) => {
@@ -37,7 +37,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
           <div className='d-flex flex-row'>
             <i className="bi bi-star-fill text-warning" style={{ fill: 'yellow' }}></i>
             <p className='me-3 ms-1 fw-bold'>{rate}</p>
-            <DurationAndYear year={year} time={time} />
+            <YearDuration year={year} time={time} />
           </div>
           <p className='fw-bold col-md-8 col-11'>{desc}</p>
           <div className='d-flex flex-row'>
