@@ -6,12 +6,18 @@ import Card from "../elements/Card";
 import { Select } from "../elements/Select";
 
 const ListMovie = ({res, text, label, className, classNameLabel, name, value, options, onSelect, number}) => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([])  
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const handleClick = () => {
+      // Update the state to represent the next page
+      setCurrentPage(currentPage + 1);
+    };
     // const [number, setNumber] = useState(1)
         useEffect(() => {
             const fetchData = async () => {
             try {                
-                const response = await axios.get(`${baseUrl}/${res}`, {
+                const response = await axios.get(`${baseUrl}/${res}&page=${currentPage}`, {
                     headers: {
                         'Authorization': `${header}`
                     }
@@ -22,12 +28,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
             }
         };
        fetchData();
-   }, []);
-
-   const handleClick = () => {
-    // const numberInc = number + 1
-    // setNumber(numberInc)
-   }
+   }, [currentPage]);
 
     return(
         <div className="pb-4 container">            

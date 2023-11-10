@@ -1,7 +1,4 @@
 import { useLocation, useNavigate } from "react-router-dom"
-import Footer from "../components/Footer"
-import ListMovie from "../components/ListMovie"
-import Navbar from "../components/Navbar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { baseImgUrl, baseUrl, header } from "../utils/FetchApi"

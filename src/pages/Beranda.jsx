@@ -59,7 +59,6 @@ const Beranda = () =>{
     const [title, setTitle] = useState([])
     useEffect(() => {
         const fetchData = async () => {
-            872585
             try {
                
                     const response = await axios.get(`${baseUrl}/movie/609681?language=en-US`, {
@@ -89,7 +88,7 @@ const Beranda = () =>{
                 tag={'16+'}
                 time={'2j 30m'}
                 year={title?.release_date ? title.release_date.substring(0, 4) : ""}
-                rate={'9.0'}
+                rate={title?.vote_average}
                 desc={title?.overview}
                 actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}                
                 navLink={`https://www.youtube.com/watch?v=${movie?.key}`}
@@ -112,7 +111,7 @@ const Beranda = () =>{
                 navLink={'/mendatang'}
                 id={6}
             />
-            <div className="col-10 pt-3 pb-5 container">
+            <div className="col-11 pt-3 pb-5 container">
                 <h3>Genre Tersedia</h3>
                 {
                     data?.length > 0 ? (

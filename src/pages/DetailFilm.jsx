@@ -57,6 +57,7 @@ const DetailFilm = () => {
     return(
         <div>
             <JumbotronDetail
+                actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}  
                 classJumbotron={'container'}
                 img={`${baseImgUrl}/${data?.poster_path}`}
                 h1={data?.title}
@@ -79,7 +80,7 @@ const DetailFilm = () => {
                 <h3>Videos</h3>
                 <div className="vw-70" 
                     style={{
-                        height:'40vh',
+                        height:'50vh',
                         background:`url(${baseImgUrl}/${data?.backdrop_path})`,
                         backgroundSize: '100%',
                         backgroundRepeat:'no-repeat'
@@ -107,7 +108,7 @@ const DetailFilm = () => {
                 </div>
                 {/* <video controls>
                     <source src={`https://www.youtube.com/watch?v=${movie?.key}`} type="video/webm" />
-                    Browsermu tidak mendukung tag ini, upgrade donk!
+                    Browsermu tidak mendukung tag ini
                 </video> */}
             </div>           
             <Carousel/>
