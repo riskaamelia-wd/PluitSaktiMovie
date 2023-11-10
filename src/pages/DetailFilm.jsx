@@ -57,7 +57,7 @@ const DetailFilm = () => {
     return(
         <div>
             <JumbotronDetail
-                actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}  
+                actor={'Winona Ryder, David Harbour'}  
                 classJumbotron={'container'}
                 img={`${baseImgUrl}/${data?.poster_path}`}
                 h1={data?.title}
