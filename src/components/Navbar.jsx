@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = ({img, value, onChange}) => {
     return(
         <div className="d-flex flex-row justify-content-between p-3 mb-5">
-            <div  className="d-flex flex-row col-8">
+            <div  className="d-flex flex-row col-5 col-lg-8">
                 <NavLink to={'/'}>
                     <img
                         // style={{width:'162px'}} 

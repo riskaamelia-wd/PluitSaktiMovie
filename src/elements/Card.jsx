@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 const Card = ({img, year, time, title}) => {
     return(
         <NavLink className="p-3" to={'/detailFilm'}>
-            <div style={{width:'199px'}} className="bg-secondary">
+            <div  className="bg-secondary">
                 <img src={img} width={'100%'} alt="" />
             </div>
             <p className="fw-bold mt-3 mb-1">{title}</p>
@@ -17,3 +17,4 @@ const Card = ({img, year, time, title}) => {
 }
 
 export default Card
+// style={{width:'199px'}}

@@ -68,8 +68,7 @@ const Genre = ({}) => {
    }, [tag]);
 
     return(
-        <>
-            <Navbar/>
+        <div>
             {/* <ListMovie
                 label={'Genre : '}
                 options={genreList}
@@ -92,7 +91,7 @@ const Genre = ({}) => {
                 onSelect={handleChange}
             />
         }
-            <div className='d-flex flex-row col-12 row justify-content-between m-auto'>
+            <div className='d-flex flex-row col-12 row m-auto'>
                 {
                     data?.length > 0 ?(
                         data?.map(item => (
@@ -109,8 +108,7 @@ const Genre = ({}) => {
                     <p>no data</p>
                 }
             </div>
-            <Footer/>
-        </>
+        </div>
     )
 }
 export default Genre

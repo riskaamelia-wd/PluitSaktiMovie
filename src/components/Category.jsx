@@ -4,7 +4,7 @@ import Card from "../elements/Card"
 import axios from "axios";
 import { baseImgUrl, baseUrl, header } from "../utils/FetchApi";
 
-const Category = ({text, img, navLink}) => {
+const Category = ({text, img,id,   navLink}) => {
     const [data, setData] = useState([])
         useEffect(() => {
             const fetchData = async () => {
@@ -26,7 +26,7 @@ const Category = ({text, img, navLink}) => {
             fetchData();
         }, []);
     return (        
-      <div className="mt-3 mb-3">
+      <div className="pt-3 pb-3">
         <div className="d-flex flex-row justify-content-between  mb-3">
             <h3>{text}</h3>
             <Button
@@ -35,18 +35,19 @@ const Category = ({text, img, navLink}) => {
                 navLink={navLink}
             />
         </div>
-        <div className='d-flex flex-row col-12 row justify-content-between m-auto'>
+        <div className='d-flex flex-row col-12 row  m-auto'>
             {
                 data?.length > 0 ?(
-                    data?.map(item => (
-                        <div className="col-md-4 pe-1 col-3 col-lg-2">
-                            <Card
-                            time={'1h 53m'}
-                            year={item.release_date}
-                            img={`${baseImgUrl}/${item.poster_path}`}
-                            title={item.title}
-                            />
-                        </div>   
+                    data?.map((item,idx) => (
+                        idx < id &&
+                            <div className="col-md-4 p-1 col-3 col-lg-2">
+                                <Card
+                                time={'1h 53m'}
+                                year={item.release_date}
+                                img={`${baseImgUrl}/${item.poster_path}`}
+                                title={item.title}
+                                />
+                            </div> 
                     ))
                 ):
                 <p>no data</p>

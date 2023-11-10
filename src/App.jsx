@@ -15,23 +15,31 @@ import Terpopuler from './pages/Terpopuler'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Mendatang from './pages/Mendatang'
 import Genre from './pages/Genre'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
   return (
-   <div style={{backgroundColor:'#090617'}}>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Beranda/>}/>
-        <Route path='detailFilm' element={<DetailFilm/>}/>
-        <Route path='sedangTayang' element={<SedangTayang/>}/>
-        <Route path='terpopuler' element={<Terpopuler/>}/>
-        <Route path='mendatang' element={<Mendatang/>}/>        
-        <Route path='genre/:tag' element={<Genre/>}/>
-      </Routes>
-    </BrowserRouter>
-    
-   </div>
+    <div>
+    <div style={{backgroundColor:'#090617'}}>
+      <BrowserRouter>
+      <div className='container'>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Beranda/>}/>
+          <Route path='detailFilm' element={<DetailFilm/>}/>
+          <Route path='sedangTayang' element={<SedangTayang/>}/>
+          <Route path='terpopuler' element={<Terpopuler/>}/>
+          <Route path='mendatang' element={<Mendatang/>}/>        
+          <Route path='genre/:tag' element={<Genre/>}/>
+        </Routes>
+      </div>
+      </BrowserRouter>
+      
+    </div>
+        <Footer/>
+    </div>
   )
 }
 

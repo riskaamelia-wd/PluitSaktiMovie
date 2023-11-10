@@ -10,14 +10,12 @@ import ListMovie from "../components/ListMovie";
 
 const SedangTayang = () => {
     return(
-        <>
-            <Navbar/>
+        <div>
             <ListMovie
                 res={'/movie/now_playing?language=en-US&page=1'}
                 text={'Sedang Tayang'}
             />
-            <Footer/>
-        </>
+        </div>
     )
 }
 

@@ -38,7 +38,6 @@ const Beranda = () =>{
     return(
         <>
          <div>
-            <Navbar/>
             <Jumbotron
                 // bgImg={bg}
                 h1={'Indiana Jones and The Dial Of Destiny'}
@@ -56,18 +55,21 @@ const Beranda = () =>{
                 img={img}
                 text={'Sedang Populer'}
                 navLink={'/sedangTayang'}
+                id={6}
             />
             <Category
                 img={img}
                 text={'Terpopuler'}
                 navLink={'/terpopuler'}
+                id={6}
             />
             <Category
                 img={img}
                 text={'Mendatang'}
                 navLink={'/mendatang'}
+                id={6}
             />
-            <div className="col-10 mt-3 mb-5">
+            <div className="col-10 pt-3 pb-5">
                 <h3>Genre Tersedia</h3>
                 {
                     data?.length > 0 ? (
@@ -89,7 +91,6 @@ const Beranda = () =>{
                     <p>no data</p>
                 }
             </div>
-            <Footer/>
             </div>
         </>
     )

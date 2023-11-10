@@ -4,14 +4,12 @@ import ListMovie from "../components/ListMovie";
 
 const Mendatang = () => {
     return(
-        <>
-            <Navbar/>
+        <div >
             <ListMovie
                 res={'/movie/upcoming?language=en-US&page=1'}
                 text={'Mendatang'}
             />
-            <Footer/>
-        </>
+        </div>
     )
 }
 

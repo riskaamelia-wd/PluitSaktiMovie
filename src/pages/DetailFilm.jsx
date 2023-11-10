@@ -7,8 +7,7 @@ import Carousel from "../components/Carousel"
 
 const DetailFilm = () => {
     return(
-        <>
-            <Navbar/>
+        <div>
             <JumbotronDetail
                 img={img}
                 h1={'Indiana Jones and The Dial Of Destiny'}
@@ -26,9 +25,9 @@ const DetailFilm = () => {
             <Category
                 img={img}
                 text={'Film Serupa'}
+                id={6}
             />
-            <Footer/>
-        </>
+        </div>
     )
 }
 

@@ -28,7 +28,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
    }, []);
 
     return(
-        <div className="mb-4">            
+        <div className="pb-4">            
         {text && <h3>{text}</h3>}
         {
             label &&
@@ -42,7 +42,7 @@ const ListMovie = ({res, text, label, className, classNameLabel, name, value, op
                 onSelect={onSelect}
             />
         }
-            <div className='d-flex flex-row col-12 row justify-content-between m-auto'>
+            <div className='d-flex flex-row col-12 row m-auto'>
                 {
                     data?.length > 0 ?(
                         data?.map(item => (

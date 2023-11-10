@@ -4,14 +4,12 @@ import Navbar from "../components/Navbar"
 
 const Terpopuler = ({}) => {
     return(
-        <>
-            <Navbar/>
+        <div>
             <ListMovie
                 text={'Terpopuler'}
                 res={'/movie/popular?language=en-US&page=1'}
             />
-            <Footer/>
-        </>
+        </div>
     )
 }
 export default Terpopuler
