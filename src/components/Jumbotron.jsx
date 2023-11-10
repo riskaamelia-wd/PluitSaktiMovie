@@ -1,6 +1,6 @@
 // import bg from '../assets/bg.svg'
 import Button from '../elements/Button'
-import DurationAndYear from '../elements/DurationandYear'
+import DurationAndYear from '../elements/DurationandYear';
 import Tag from '../elements/Tag'
 
 const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bgImg, navLink}) => {
