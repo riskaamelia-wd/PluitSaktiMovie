@@ -1,4 +1,4 @@
-const DurationAndYear = ({year,time}) => {
+const DurationandYear = ({year,time}) => {
     return(
         <div className="d-flex flex-row gap-1">
             <p>{year}</p>
@@ -7,4 +7,4 @@ const DurationAndYear = ({year,time}) => {
         </div>
     )
 }
-export default DurationAndYear
+export default DurationandYear
