@@ -1,7 +1,6 @@
 import appStore from '../assets/App Store - Filled.svg'
 import googlePlay from '../assets/Google Play.svg'
 import logo from '../assets/logo-white.svg'
-import './style.css'
 
 const Footer = ({}) => {
     return(

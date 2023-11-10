@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
 
-const Button = ({iconLeft, iconRight, text, type, className, id, onClick, navLink}) => {
+const Button = ({iconLeft, style, iconRight, text, type, className, id, onClick, navLink}) => {
     return(
-        <NavLink to={navLink}>
+        <NavLink to={navLink} style={{style}}>
             <button
                 type={type ? type : "button"}
                 className={className ? `btn ${className}` : "btn ps-4 pe-4 p-2 btnHover"}

@@ -1,18 +1,16 @@
-import img from '../assets/img.svg'
-
-const Card2 = ({}) => {
+const Card2 = ({img, character, name}) => {
     return(
-        // <div className='mb-5' style={{backgroundColor:"#0F172A"}}>
-            <div className="card rounded-3" style={{backgroundColor:"#0F172A"}}>
-                <div style={{width:'199px', height:'252px', }}>
-                    <img src={img} width={'100%'} className="card-img-top rounded-3" alt="..."/>
+        <div className='p-2 m-0 col-2'>
+            <div className="p-0 card rounded-3 " style={{backgroundColor:"#0F172A"}}>
+                <div>
+                    <img src={img} className="card-img-top m-0 rounded-3" alt="..."/>
                 </div>
-                <div className="card-body">
-                    <p className="card-text m-0 mt-2">Milly Bobby Brown.</p>
-                    <p className="card-text">Jane Hopper</p>
+                <div className="card-body p-0">
+                    <p className="card-text m-0 p-1">{character}</p>
+                    <p className="card-text ps-1 mb-1">{name}</p>
                 </div>
             </div>
-        // </div>
+        </div>
     )
 }
 export default Card2
