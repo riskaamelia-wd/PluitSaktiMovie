@@ -1,9 +1,9 @@
 const YearDuration = ({year,time}) => {
     return(
         <div className="d-flex flex-row gap-1">
-            <p>{year}</p>
-            <span  className='pe-1 ps-1'>I</span>
-            <p>{time}</p>
+            <small style={{ fontSize: '0.7rem' }}>{year}</small>
+            <small>I</small>
+            <small style={{ fontSize: '0.7rem' }}>{time}</small>
         </div>
     )
 }

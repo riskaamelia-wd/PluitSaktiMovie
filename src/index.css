@@ -24,6 +24,9 @@ a {
 a:hover, a:active, a:focus{
   color: red !important;
 }
+.tagHover:hover{
+  background-color: red !important;
+}
 
 /* body {
   margin: 0;

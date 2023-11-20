@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = ({img, value, onChange}) => {
     return(
         <nav className="navbar navbar-expand-lg">
-            <div className="  container p-3 mb-5">
+            <div className="  container p-2">
                 <NavLink className={'col-3 col-lg-2 navbar-brand'} to={'/'}>
                     <img
                         // style={{width:'162px'}} 

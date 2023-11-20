@@ -48,7 +48,7 @@ const ListMovie = ({ res, text, label, className, classNameLabel, name, value, o
       <div className="d-flex flex-row col-12 row m-auto">
         {data?.length > 0 ? (
           data.map((item) => (
-            <div className="col-md-4 pe-1 col-3 col-lg-2" key={item.id}>
+            <div className="col-md-3 pe-1 col-4 col-lg-2" key={item.id}>
               <Card
                 idFilm={item.id}
                 time={"1h 53m"}
