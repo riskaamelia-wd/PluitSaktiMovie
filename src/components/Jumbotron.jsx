@@ -32,7 +32,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
               ))}
             </ul>
           </div>
-          <h1 style={{ fontSize: '64px' }}>{h1}</h1>
+          <h1 className='fs-1'>{h1}</h1>
           <Tag tag={tag} className={'mb-3 mt-2'} />
           <div className='d-flex flex-row'>
             <i className="bi bi-star-fill text-warning" style={{ fill: 'yellow' }}></i>

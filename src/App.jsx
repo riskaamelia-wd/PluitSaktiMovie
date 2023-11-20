@@ -19,6 +19,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CariFilm from './pages/CariFilm'
 import { baseUrl, header } from './utils/FetchApi'
+import FilmSerupa from './pages/FilmSerupa'
 
 function App() {
   const [data, setData] = useState([])  
@@ -53,6 +54,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Beranda/>}/>
           <Route path='detailFilm/:id' element={<DetailFilm/>}/>
+          <Route path='filmSerupa/:id' element={<FilmSerupa/>}/>
           <Route path='sedangTayang' element={<SedangTayang/>}/>
           <Route path='terpopuler' element={<Terpopuler/>}/>
           <Route path='mendatang' element={<Mendatang/>}/>        

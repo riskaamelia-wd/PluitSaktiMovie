@@ -57,6 +57,7 @@ const Beranda = () =>{
     
     
     const [title, setTitle] = useState([])
+    const [overview, setOverview] = useState('')
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -67,7 +68,7 @@ const Beranda = () =>{
                         }
                     });
                     setTitle(response.data)
-                    console.log(response.data);
+                    setOverview(response.data.overview)
                 
             } catch (error) {
                 console.log(error);
@@ -78,6 +79,14 @@ const Beranda = () =>{
     }, []);
 
     const navigate = useNavigate()
+    const truncateText = (overview, maxLength) => {
+        if (title && title.overview && title.overview.length > maxLength) {
+          return overview.substring(0, maxLength) + '...';
+        }
+        return overview; // Return empty string if title or title.overview is undefined
+      };
+      
+      const maxLength = 150;
     return(
         <>
          <div>
@@ -89,27 +98,27 @@ const Beranda = () =>{
                 time={'2j 30m'}
                 year={title?.release_date ? title.release_date.substring(0, 4) : ""}
                 rate={title?.vote_average}
-                desc={title?.overview}
+                desc={truncateText(title?.overview, maxLength)}
                 actor={'Winona Ryder, David Harbour, Millie Bobby Brown'}                
                 navLink={`https://www.youtube.com/watch?v=${movie?.key}`}
             />
             <Category
                 img={img}
-                text={'Sedang Populer'}
+                text={'Sedang Tayang'}
                 navLink={'/sedangTayang'}
-                id={6}
+                apiUrl={`${baseUrl}//movie/now_playing?language=en-US`}
             />
             <Category
                 img={img}
                 text={'Terpopuler'}
                 navLink={'/terpopuler'}
-                id={6}
+                apiUrl={`${baseUrl}/movie/popular?language=en-US`}
             />
             <Category
                 img={img}
                 text={'Mendatang'}
                 navLink={'/mendatang'}
-                id={6}
+                apiUrl={`${baseUrl}/movie/upcoming?language=en-US`}
             />
             <div className="col-11 pt-3 pb-5 container">
                 <h3>Genre Tersedia</h3>

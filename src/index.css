@@ -21,8 +21,8 @@ a {
   text-decoration: none;
   color: white;
 }
-a:hover {
-  color: red;
+a:hover, a:active, a:focus{
+  color: red !important;
 }
 
 /* body {

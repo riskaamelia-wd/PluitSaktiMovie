@@ -13,7 +13,7 @@ const Search = ({value,onChange}) => {
                     className="form-control-plaintext ms-1"
                 />
             </div>
-            <hr className="border border-white m-0"/>
+            <hr className="border-0 border border-top-5 m-0" style={{borderColor:'var(--warning'}}/>
         </>
     )
 }

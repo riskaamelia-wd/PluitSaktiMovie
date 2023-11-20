@@ -116,7 +116,8 @@ const DetailFilm = () => {
                 img={img}
                 text={'Film Serupa'}
                 id={6}
-                navLink={'/sedangTayang'}
+                navLink={`/filmSerupa/${movieID}`}
+                apiUrl={`${baseUrl}/movie/${movieID}/similar?language=en-US&page=1`}
             />
         </div>
     )

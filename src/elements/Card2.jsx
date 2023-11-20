@@ -1,6 +1,6 @@
 const Card2 = ({img, character, name}) => {
     return(
-        <div className='p-2 m-0 col-lg-2 col-3'>
+        <div className='p-2 m-0 col-lg-2 col-md-3 col-4'>
             <div className="p-0 card rounded-3 " style={{backgroundColor:"#0F172A"}}>
                 <div>
                     <img src={img} className="card-img-top m-0 rounded-3" alt="..."/>
