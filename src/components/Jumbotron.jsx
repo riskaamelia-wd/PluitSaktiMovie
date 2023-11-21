@@ -39,7 +39,7 @@ const Jumbotron = ({ list, h1, tag, year, time, rate, desc, actor, className, bg
             <p className='me-3 ms-1 fw-bold'>{rate}</p>
             <YearDuration year={year} time={time} />
           </div>
-          <p className='fw-bold col-md-8 col-11'>{desc}</p>
+          <p className='fw-bold col-md-9 col-12'>{desc}</p>
           <div className='d-flex flex-row'>
             <p>Dibintangi : </p>
             <p className='fw-bold ms-1'>{actor}</p>

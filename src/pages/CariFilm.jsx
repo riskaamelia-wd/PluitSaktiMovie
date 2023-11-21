@@ -13,7 +13,7 @@ const CariFilm =  ({data, value, onChange}) =>{
                 {
                     data && data?.length > 0 ?(
                         data?.map(item => (
-                            <div className="col-md-4 pe-1 col-3 col-lg-2">
+                            <div className="col-md-3 pe-1 col-4 col-lg-2">
                                 <Card
                                 key={item.id}
                                 idFilm={item.id}
